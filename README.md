@@ -9,7 +9,9 @@ Your GET request URL should look something like this:
 - `sheetName` - The name of the sheet that you're looking to extract data from. Remember to use %20 for spaces.
 
 ## Returned Data
-This script returns a string of JSON, which will need to be parsed. Each row is contained in an array.
+This script returns a string of JSON, which will need to be parsed. Each row is contained in an array. When looking at a sheet, the script uses the top row of values as headers, and every other row as data. For example, <br>
+![Image of google sheet](https://i.imgur.com/TYjElhH.png) <br>
+would become `[{"name":"Dinty","info":"do be existing"},{"name":"Someone","info":"is a person"}]`
 
 ## Other Notes
 Google Apps Script's content service redirects the request to another location, so however you are making the request, you must be able to follow the redirect.
